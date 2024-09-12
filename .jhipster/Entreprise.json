@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240912133850"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "secteur",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "presenceAuMaroc",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "focus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "profilLinkedIn",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Entreprise",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

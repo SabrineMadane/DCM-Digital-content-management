@@ -1,0 +1,26 @@
+{
+  "annotations": {
+    "changelogDate": "20240912133852"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "contenu",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "categorie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "niveau",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Question",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

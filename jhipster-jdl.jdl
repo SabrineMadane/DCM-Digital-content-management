@@ -1,0 +1,47 @@
+entity Entreprise {
+  secteur String required,
+  presenceAuMaroc Boolean required,
+  focus String,
+  logo String,
+  profilLinkedIn String
+}
+
+entity HR {
+  nom String required,
+  prenom String required,
+  email String required
+}
+
+entity Utilisateur {
+  nom String required,
+  prenom String required,
+  cv String,
+  emailPersonnel String required
+}
+
+entity Question {
+  contenu String required,
+  categorie String,
+  niveau Integer
+}
+
+entity Demande {
+  etat String required, // Par exemple : "en attente", "acceptée", "refusée"
+  dateCandidature ZonedDateTime required
+}
+
+relationship ManyToOne {
+  Demande{utilisateur} to Utilisateur,
+  Demande{entreprise} to Entreprise
+}
+
+relationship ManyToOne {
+  HR{entreprise} to Entreprise
+}
+
+relationship ManyToMany {
+  Utilisateur{entreprisesDesirees} to Entreprise
+}
+
+dto Entreprise, HR, Utilisateur, Question, Demande with mapstruct
+service all with serviceClass

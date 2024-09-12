@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20240912133853"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailPersonnel",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Utilisateur",
+  "relationships": [
+    {
+      "otherEntityName": "entreprise",
+      "relationshipName": "entreprisesDesirees",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

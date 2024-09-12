@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20240912133849"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "etat",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateCandidature",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Demande",
+  "relationships": [
+    {
+      "otherEntityName": "utilisateur",
+      "relationshipName": "utilisateur",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "entreprise",
+      "relationshipName": "entreprise",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
