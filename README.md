@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # interviewPreparation
 
 This application was generated using JHipster 8.7.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.7.0](https://www.jhipster.tech/documentation-archive/v8.7.0).
@@ -255,3 +256,7 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [Leaflet]: https://leafletjs.com/
 [DefinitelyTyped]: https://definitelytyped.org/
 [Angular CLI]: https://cli.angular.io/
+=======
+# DCM-Digital-content-management-
+The Digital Content Management System (DCMS) is a robust and scalable application designed to manage digital content efficiently. This project is built using a microservices architecture, ensuring modularity and flexibility.
+>>>>>>> d35ad2d (Ajout du projet Spring sans la partie frontend)

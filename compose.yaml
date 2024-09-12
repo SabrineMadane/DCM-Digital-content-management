@@ -1,0 +1,25 @@
+name: gestioncontenu
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+  keycloak:
+    container_name: keycloak-bsn
+    image: quay.io/keycloak/keycloak:24.0.2
+    ports:
+      - 9090:8080
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/GDSFinal
+      KEYCLOAK_AUTH_SERVER_URL: http://keycloak:8080/auth
+    networks:
+      - spring-demo
+    command:
+      - "start-dev"
+networks:
+  spring-demo:
+volumes:
+  keycloak_data:
+

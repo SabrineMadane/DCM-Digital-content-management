@@ -1,0 +1,72 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/Digital-content-manager
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/dcm
+    username: root
+    password: root
+
+  web:
+    cors:
+      allowed-origins: "http://localhost:4200"
+      allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+      allowed-headers: "*"
+      allow-credentials: true
+
+  jpa:
+
+    hibernate:
+      ddl-auto: update  # Peut être 'create', 'create-drop', 'validate' ou 'none'
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+
+keycloak:
+  auth-server-url: http://localhost:9090/
+  realm: Digital-content-manager
+  resource: Spring-boot-backend
+  use-resource-role-mappings : true
+  client-id: Spring-boot-backend
+  client-secret: ZPMGZFIgezfrkBPKgitpcObzSBjtkP3d
+  public-client: true
+  bearer-only: true
+
+
+keycloak-admin:
+  username: sabrinemadane3@gmail.com
+  password: sabrine
+
+jwt:
+  auth:
+    converter:
+      principle-attribute: preferred_username
+      resource-id: Spring-boot-backend
+
+
+minio:
+  endpoint: http://localhost:9000
+  accessKey: your-access-key
+  secretKey: your-secret-key
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.keycloak: DEBUG
+    
+    # Pour afficher les requêtes SQL
